@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
+	<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'>
+	</link>
+
+	<title>Twin Standart Room</title>
+
+</head>
+
+
+<body>
+	<x3d width=’100px’ height=’1000px’>
+		<scene>
+
+
+			<Viewpoint id="Entry" position="0.00000 5.00000 20.00000" orientation="0.00000 0.00000 0.00000 0.00000"
+				description="defaultX3DViewpointNode"></Viewpoint>
+
+			<Viewpoint id="Top" position="-2.08471 8.50829 4.82318" orientation="-0.86550 -0.39751 -0.30478 1.12707"
+				description="defaultX3DViewpointNode"></Viewpoint>
+
+			<Viewpoint id="Below" position="-2.43383 1.07351 -1.28700" orientation="-0.00318 -0.99950 -0.03159 2.06609"
+				description="defaultX3DViewpointNode"></Viewpoint>
+
+
+
+
+
+
+
+
+			<background skyColor='0 0.2 0.3'> </background>
+
+			<directionalLight id="directional" direction=“0 0 -1” on="TRUE" intensity=“.7” shadowIntensity=“.5”>
+			</directionalLight>
+
+
+			<transform rotation='0 0 0 0 ' translation='0 5.35 -5.5'> <!-- Wall with windows-->
+
+				<shape>
+					<appearance>
+						<imageTexture
+							url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Grey_painted_slightly_scrapped_seamless_concrete_building_wall_texture.jpg/640px-Grey_painted_slightly_scrapped_seamless_concrete_building_wall_texture.jpg">
+						</imageTexture>
+					</appearance>
+					<box size='11.5 11 0.3' solid='true' />
+				</shape>
+			</transform>
+
+
+
+			<shape DEF='Floor'> <!-- Creation of the floor-->
+
+				<appearance>
+					<imageTexture
+						url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Hard_wearing_grey_carpet_texture.jpg/640px-Hard_wearing_grey_carpet_texture.jpg">
+					</imageTexture>
+
+				</appearance>
+
+				<box size='11 0.3 11' solid='true' />
+			</shape>
+
+
+
+
+
+
+			<transform rotation='0 0 1 1.57 ' translation='-5.6 5.35 0'> <!-- Left Wall-->
+
+
+				<shape DEF='Wall'>
+					<appearance>
+						<imageTexture
+							url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Grey_painted_slightly_scrapped_seamless_concrete_building_wall_texture.jpg/640px-Grey_painted_slightly_scrapped_seamless_concrete_building_wall_texture.jpg">
+						</imageTexture>
+
+					</appearance>
+
+					<box size='11 0.3 11' solid='true' />
+				</shape>
+
+			</transform>
+
+			<transform rotation='0 0 1 1.57 ' translation='5.6 5.35 0'> <!-- Right Wall-->
+
+				 <shape USE='Wall'> </shape>
+
+			</transform>
+
+
+
+
+			<transform rotation='0 0 0 0' translation='3.45 0.4 0.9'> <!-- My Bed -->
+
+				<shape DEF='Bed'>
+					<appearance>
+						<imageTexture
+							url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg/640px-Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg">
+						</imageTexture>
+					</appearance>
+
+					<box size='4 0.8 1.8' solid='true' />
+				</shape>
+			</transform>
+
+			<transform rotation='0 0 0 0' translation='3.45 0.9 0.9'> <!-- Putting matress on top of the bed-->
+				<shape DEF='matress'>
+					<appearance>
+						<imageTexture
+							url="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Blue_Cotton_Fabric_Texture_Free_Creative_Commons_%286962342861%29.jpg/640px-Blue_Cotton_Fabric_Texture_Free_Creative_Commons_%286962342861%29.jpg">
+						</imageTexture>
+					</appearance>
+
+					<box size='3.8 0.2 1.6' solid='true' />
+
+				</shape>
+			</transform>
+
+			<transform rotation='0 0 0 0' translation='5 1.1 0.9'> <!-- My pillow-->
+				<shape DEF='pillow'>
+					<appearance>
+						<imageTexture
+							url="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Sham%2C_pillow%2C_set_%28AM_1996.72.36-2%29.jpg/640px-Sham%2C_pillow%2C_set_%28AM_1996.72.36-2%29.jpg">
+						</imageTexture>
+					</appearance>
+
+					<sphere radius='0.5' solid='true' />
+
+				</shape>
+			</transform>
+
+
+
+
+
+
+			<transform rotation='0 0 0 0' translation='3.45 0.4 -4'> <!-- THis is my roomate's bed -->
+				<shape USE='Bed'></shape>
+			</transform>
+
+			<transform rotation='0 0 0 0' translation='3.45 0.9 -4'> <!-- THis is my roomate's matress -->
+				<shape USE='matress'></shape>
+			</transform>
+
+
+			<transform rotation='0 0 0 0' translation='5 1.1 -4'> <!-- My pillow-->
+				<shape USE='pillow'></shape>
+			</transform>
+
+
+
+			<transform rotation='0 0 0 0' translation='4.9 2 -1.6'> <!-- THis is my roomate's wardrobe -->
+				<shape DEF='Wardrobe'>
+					<appearance>
+						<imageTexture
+							url="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Virtual_Closet_Old.jpg/640px-Virtual_Closet_Old.jpg">
+						</imageTexture>
+					</appearance>
+
+					<box size='1.5 4 2' solid='true' />
+
+				</shape>
+
+				<transform rotation='0 0 0 0' translation='-9.9 0 1.5'> <!-- THis is my wardrobe -->
+					<shape USE='Wardrobe'></shape>
+
+
+					<transform rotation='0 0 0 0' translation='0 -1.3 4.5'> <!-- This is Desktop A Shelves-->
+						<shape DEF='TableDrawer'>
+							<appearance>
+								<imageTexture
+									url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg/640px-Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg">
+								</imageTexture>
+							</appearance>
+
+							<box size=' 1.5 1.2 1' />
+						</shape>
+					</transform>
+
+					<transform rotation='0 0 0 0' translation='0 -0.7 3.2'> <!-- This is Desktop A Top-->
+						<shape DEF='TableTop'>
+							<appearance>
+								<imageTexture
+									url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Fake_Wood_Grain_20160712.jpg/640px-Fake_Wood_Grain_20160712.jpg">
+								</imageTexture>
+
+							</appearance>
+
+							<box size=' 1.5 0.1 3.6' />
+						</shape>
+					</transform>
+
+					<transform rotation='1 0 0 1.57' translation='0 -1.3 1.45'> <!-- This Desktop A Side-->
+						<shape DEF='TableSide'>
+							<appearance>
+								<imageTexture
+									url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg/640px-Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg">
+								</imageTexture>
+							</appearance>
+
+							<box size=' 1.5 0.1 1.1' />
+						</shape>
+					</transform>
+
+
+					<transform rotation='0 0 0 0' translation='0 -0.7 -3.4'> <!-- This Desktop B Top-->
+						<shape USE='TableTop'></shape>
+					</transform>
+
+					<transform rotation='0 0 0 0' translation='0 -1.3 -4.7'> <!-- This Desktop B  Shelves-->
+						<shape USE='TableDrawer'></shape>
+					</transform>
+
+					<transform rotation='1 0 0 1.57' translation='0 -1.3 -1.65'> <!-- This is Desktop B Side-->
+						<shape USE='TableSide'></shape>
+					</transform>
+
+
+
+					<transform rotation='0 0 0 0' translation='-0.3 1.5 3.2'> <!-- Table shelf long part-->
+						<shape DEF='ShelfMain'>
+							<appearance>
+								<imageTexture
+									url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg/640px-Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg">
+								</imageTexture>
+							</appearance>
+
+							<box size=' 0.4 0.1 3.6' />
+						</shape>
+					</transform>
+
+					<transform rotation='1 0 0 1.57' translation='-0.3 0.4 1.45'> <!-- This Desktop A Side-->
+						<shape DEF='ShelfSide'>
+							<appearance>
+								<imageTexture
+									url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg/640px-Pine_Wood_-_lumber%2C_table%2C_floor%2C_desk_2.jpg">
+								</imageTexture>
+							</appearance>
+
+							<box size=' 0.4 0.1 2.2' />
+						</shape>
+					</transform>
+
+					<transform rotation='1 0 0 1.57' translation='-0.3 0.4 4.95'>
+						<shape USE='ShelfSide'></shape>
+					</transform>
+
+					<transform rotation='0 0 0 0' translation='-0.3 0.8 3.2'>
+						<shape USE='ShelfMain'></shape>
+					</transform>
+					<!-- Finished setting bookshelf for my table, now switching to my roommate's table-->
+
+
+					<transform rotation='0 0 0 0' translation='-0.3 1.5 -3.4'>
+						<shape USE='ShelfMain'></shape>
+					</transform>
+
+					<transform rotation='0 0 0 0' translation='-0.3 0.8 -3.4'>
+						<shape USE='ShelfMain'></shape>
+					</transform>
+
+					<transform rotation='1 0 0 1.57' translation='-0.3 0.4 -5.15'>
+						<shape USE='ShelfSide'></shape>
+					</transform>
+
+					<transform rotation='1 0 0 1.57' translation='-0.3 0.4 -1.65'>
+						<shape USE='ShelfSide'></shape>
+					</transform>
+
+					<<!-- The is chance to add additional shelves to make the object more realistic but it is time
+						consuming and the object is already is of a decent quiality-->
+
+						<<!-- Now it's time to add some chairs to our tables.-->
+
+
+							<transform rotation='0 0 0 0' translation='1.5 -1.5 3'> <!-- chair A bottom-->
+								<shape DEF='ChairBottom'>
+									<appearance>
+										<imageTexture
+											url="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Burnt_Wood_Texture_DTXR-WD-GR-4.jpg/640px-Burnt_Wood_Texture_DTXR-WD-GR-4.jpg">
+										</imageTexture>
+									</appearance>
+
+									<cone bottomRadius='0.3' height='0.6' solid='true' />
+
+								</shape>
+							</transform>
+
+							<transform rotation='0 0 0 0' translation='1.5 -1.21 3'>
+								<shape DEF='ChairSeat'>
+									<appearance>
+										<imageTexture
+											url="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Free_dirty_distressed_scratched_leather_texture_for_layers_creative_commons_%283005071597%29.jpg/640px-Free_dirty_distressed_scratched_leather_texture_for_layers_creative_commons_%283005071597%29.jpg">
+										</imageTexture>
+									</appearance>
+									<box size='0.6 0.1 0.6' solid='true' />
+
+								</shape>
+							</transform>
+
+							<transform rotation='0 0 1 1.40' translation='1.8 -0.8 3'>
+								<shape DEF='ChairBack'>
+									<appearance>
+										<imageTexture
+											url="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Free_dirty_distressed_scratched_leather_texture_for_layers_creative_commons_%283005071597%29.jpg/640px-Free_dirty_distressed_scratched_leather_texture_for_layers_creative_commons_%283005071597%29.jpg">
+										</imageTexture>
+									</appearance>
+									<box size='0.8 0.1 0.6' solid='true' />
+
+								</shape>
+							</transform>
+
+
+							<!-- Now it's time to add chair to my roommate's table.-->
+
+
+							<transform rotation='0 0 0 0' translation='1.5 -1.5 -3'> <!-- chair B bottom-->
+								<shape USE='ChairBottom'></shape>
+							</transform>
+
+							<transform rotation='0 0 0 0' translation='1.5 -1.21 -3'>
+								<shape USE='ChairSeat'></shape>
+							</transform>
+
+							<transform rotation='0 0 1 1.40' translation='1.8 -0.8 -3'>
+								<shape USE='ChairBack'></shape>
+							</transform>
+
+
+							<!-- Now it's time to add a radiator next to my bed.-->
+
+							<transform rotation='0 0 1 1.57' translation='10.3 -1 3'>
+								<shape DEF='radiator'>
+									<appearance>
+										<imagetexture
+											url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Radiator.svg/640px-Radiator.svg.png">
+										</imagetexture>
+
+									</appearance>
+									<box size='1 0.2 1.5' solid='true' />
+
+
+
+								</shape>
+
+
+
+
+
+								<transform rotation='1 0 0 1.57' translation='2.5 3 -8.2'> <!-- This a Window frame-->
+									<shape DEF='Window'>
+										<appearance>
+											<imageTexture
+												url="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Attic-window_hg.jpg/640px-Attic-window_hg.jpg">
+											</imageTexture>
+										</appearance>
+
+
+										<box size=' 3.5 0.05 2.5' />
+									</shape>
+								</transform>
+
+								<transform rotation='1 0 0 1.57' translation='2.5 7 -8.2'>
+									<shape USE="Window"></shape>
+								</transform>
+
+								<transform rotation='0 1 0 1.57' translation='5 10.7 0.1'>
+									<shape DEF='Picture1'>
+										<appearance>
+											<imageTexture
+												url="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/VanGogh-starry_night_ballance1.jpg/640px-VanGogh-starry_night_ballance1.jpg">
+											</imageTexture>
+										</appearance>
+
+										<box size='2.5 0.1 2' />
+
+
+
+									</shape>
+								</transform>
+
+								<transform rotation='0 1 0 1.57' translation='5 10.7 -6.5'>
+									<shape DEF='Picture2'>
+										<appearance>
+											<imageTexture
+												url="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Abstract_view_from_Børsen.jpg/640px-Abstract_view_from_Børsen.jpg">
+											</imageTexture>
+										</appearance>
+
+										<box size='2.5 0.1 2' />
+
+
+
+									</shape>
+								</transform>
+
+
+								<transform rotation='0 1 0 4.71' translation='4 0 -0.6'>
+									<shape DEF='Picture3'>
+										<appearance>
+											<imageTexture
+												url="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Baekje백제_온조_korea.jpg/640px-Baekje백제_온조_korea.jpg">
+											</imageTexture>
+										</appearance>
+
+										<box size='2 0.1 3' />
+
+
+
+									</shape>
+								</transform>
+
+
+		</scene>
+	</x3d>
+
+	<button onclick="document.getElementById('Entry').setAttribute('set_bind','true');">Entry</button>
+
+	<button onclick="document.getElementById('Top').setAttribute('set_bind','true');">Top</button>
+
+	<button onclick="document.getElementById('Below').setAttribute('set_bind','true');">Below</button>
+
+
+
+</body>
+
+</html>
